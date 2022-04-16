@@ -13,8 +13,6 @@ public class PasswordManager : MonoBehaviour
 {
     public string passwordInput;
     
-    [Title("Passwords")]
-    [SerializeField] private PhaseData[] passwordDatas;
     
     [Title("Actions")] 
     [SerializeField] private GameEventSO PasswordSuccess;
@@ -31,7 +29,7 @@ public class PasswordManager : MonoBehaviour
     private void CheckPassword()
     {
         if (GameManager.Instance == null) return;
-        if (GameManager.Instance.CurrentPhaseIndex >= passwordDatas.Length) return;
+        if (GameManager.Instance.currentPhaseIndex >= GameManager.Instance.PhaseDatas.Length) {return;}
         
         if (IsPasswordTrue())
         {
@@ -45,14 +43,17 @@ public class PasswordManager : MonoBehaviour
             if (passwordInput.Length > 0)
             {
                 PasswordFailed.Invoke();
+                GameManager.Instance.PasswordFailed = true;
                 ResetPasswordInput();
             }
+            
+            
         }
     }
     
     
 
-    private bool IsPasswordTrue() => passwordInput.Equals(passwordDatas[GameManager.Instance.CurrentPhaseIndex].currentPassword);
+    private bool IsPasswordTrue() => passwordInput.Equals(GameManager.Instance.GetCurrentPhase().currentPassword);
 
     private void ResetPasswordInput()
     {

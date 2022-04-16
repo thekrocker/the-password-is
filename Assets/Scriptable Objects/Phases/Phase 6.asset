@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5a5f48cc59247449ad93b475012061, type: 3}
+  m_Name: Phase 6
+  m_EditorClassIdentifier: 
+  dialogues:
+  - "Buraya kadar geldin.. Beni ne kadar mutlu ettin tahmin edemezsin.. \u0130lk
+    hackledi\u011Fim ki\u015Finin benimle sonuna kadar gitmesini beklemiyordum. Korkup
+    ka\xE7aca\u011F\u0131n\u0131 hayal etmi\u015Ftim. Final sorumun cevab\u0131n\u0131
+    bulabilirsen, s\xF6yledi\u011Fim gibi hackledi\u011Fim her \u015Feyi geri verece\u011Fim.
+    Buraya kadar geldin, o y\xFCzden seni daha fazla yormak istemiyorum. \n..........\nAsl\u0131nda
+    \u015Fifre i\xE7in verebilece\u011Fim pek bir \u015Fey yok.. Acaba ne olabilir?
+    Biraz d\xFC\u015F\xFCnmeni istiyorum. Buraya nereden geldin. Ni\xE7in geldin.
+    Hat\u0131rlaman\u0131 istiyorum. Geldi\u011Fin yeri hat\u0131rlaman\u0131. Bilgisayara
+    dahi gelmeden \xF6nceki yeri..  \u015Eifremiz ilk oyunumuzdaki gibi 1 ve 0 'dan
+    olu\u015Fuyor. Hat\u0131rlarsan 0, sesli harflere, 1 ise sessiz harflere denk
+    gelmeliydi. \nBakal\u0131m \u015Fifreyi hat\u0131rlayabilecek misin? \xC7\xFCnk\xFC
+    \u015Fifreyi daha \xF6nce g\xF6rd\xFCn.\n..........\nBuraya gelmeden \xF6nce..\n"
+  currentPassword: 100
+  phaseTimer: 180

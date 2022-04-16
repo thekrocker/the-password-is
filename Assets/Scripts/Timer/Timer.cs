@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Globalization;
+using Managers;
 using SO;
 using TMPro;
 using UnityEngine;
@@ -13,8 +14,6 @@ namespace Timer
         public bool isActive;
 
         [SerializeField] private TextMeshProUGUI timerText;
-
-
         [SerializeField] private GameEventSO timerFinished;
 
         public void StartTimer(float elapsedTime)
@@ -32,19 +31,14 @@ namespace Timer
                     
                 while (elapsedTime >= totalTime)
                 {
-                    var seconds = Mathf.FloorToInt(elapsedTime);
-                    if (seconds.ToString().Length > 1) timerText.text = $"00:{seconds}";
-                    else timerText.text = $"00:0{seconds}";
-
                     if (StopTimer)
                     {
                         timerText.enabled = false;
-                        Debug.Log("Timer stopped.. Succesful");
                         yield break;
                     }
-
+                    SetTimerText(elapsedTime);
                     elapsedTime -= Time.deltaTime;
-                    Debug.Log(elapsedTime);
+                    elapsedTime -= SetTimePenalty(1f);
                     yield return null;
                 }
 
@@ -53,5 +47,21 @@ namespace Timer
                 Debug.Log("Timer finished...");
             }
         }
+
+        private void SetTimerText(float elapsedTime)
+        {
+            int seconds = Mathf.FloorToInt(elapsedTime);
+            timerText.text = $"{seconds}";
+        }
+
+        public float SetTimePenalty(float penalty)
+        {
+            if (!GameManager.Instance.PasswordFailed) return 0f;
+            GameManager.Instance.PasswordFailed = false;
+            return penalty;
+
+        }
     }
+    
+    
 }

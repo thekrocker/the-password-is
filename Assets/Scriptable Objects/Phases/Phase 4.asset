@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5a5f48cc59247449ad93b475012061, type: 3}
+  m_Name: Phase 4
+  m_EditorClassIdentifier: 
+  dialogues:
+  - "Umar\u0131m ilk denemede bulmu\u015Fsundur. Kabul ediyorum bu biraz kafa kar\u0131\u015Ft\u0131r\u0131c\u0131yd\u0131..
+    En az\u0131ndan ben haz\u0131rlarken kafam kar\u0131\u015Ft\u0131. Ama senin
+    yapabilece\u011Fine inan\u0131yordum. Neyse, benimle daha fazla vakit ge\xE7ir
+    diye bilgisayar saatini bozmu\u015Ftum. \xC7ok da vaktini almak istemiyorum.
+    Ama durumumuz ortada. Banka hesaplar\u0131n\u0131n elimde oldu\u011Funu hat\u0131rlatmama
+    gerek yok herhalde. Saati d\xFCzeltmenin bir yolunu bul. D\xFCzelttiysen, saatin
+    rakamlar\u0131 toplam\u0131 kadar 1 veya 0 yazman\u0131 istiyorum. Say\u0131m\u0131z
+    tek ise \u015Fahsen 1'i tercih ederim.. Hadi i\u015Fe koyul. Seni bekliyor olaca\u011F\u0131m...."
+  currentPassword: 1111111111111111111
+  phaseTimer: 120

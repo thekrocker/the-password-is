@@ -50,11 +50,7 @@ namespace Managers
                     for (var i = 0; i < _letterLength; i++)
                         terminalText.text += _letters[Random.Range(0, _letters.Length)];
                     yield return new WaitForSeconds(terminalTextInterval);
-
-                    if (hasDialogue)
-                    {
-                        yield break;
-                    } 
+                    if (hasDialogue) yield break;
                 }
             }
         }

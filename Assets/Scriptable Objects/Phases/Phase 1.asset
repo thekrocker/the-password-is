@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Phase 1
   m_EditorClassIdentifier: 
   dialogues:
-  - "Ehm, ehm! Beni duyabiliyor musun? Sana k\xF6t\xFC bir haberim var!  \xDCzg\xFCn\xFCm
-    ama, bilgisayar\u0131n benim taraf\u0131mdan ele ge\xE7irildi. ^.^."
-  - "Yani bu demek oluyor ki, t\xFCm bilgilerin elimde. \xC7al\u0131\u015Ft\u0131\u011F\u0131n
-    yerin resmi d\xF6k\xFCmanlar\u0131 dahil. Ki\u015Fisel alg\u0131lama l\xFCtfen.
-    Sadece yeteneklerimi test ediyorum..Seninle k\xFC\xE7\xFCk bir oyun oynamak istiyorum.
+  - "Ehm, ehm! Beni duyabiliyor musun? Sana k\xF6t\xFC bir haberim var! \xDCzg\xFCn\xFCm
+    ama, bilgisayar\u0131n benim taraf\u0131mdan ele ge\xE7irildi ^.^. Yani bu demek
+    oluyor ki, t\xFCm bilgilerin elimde. \xC7al\u0131\u015Ft\u0131\u011F\u0131n yerin
+    resmi d\xF6k\xFCmanlar\u0131 dahil. Ki\u015Fisel alg\u0131lama l\xFCtfen. Sadece
+    yeteneklerimi test ediyorum..Seninle k\xFC\xE7\xFCk bir oyun oynamak istiyorum.
     E\u011Fer oyunu ge\xE7ebilirsen, elimdeki verileri silip, ortadan kaybolaca\u011F\u0131m!
     S\xF6z veriyorum.\nSeni <> soruluk bir test ile me\u015Fgul edece\u011Fim. Sordu\u011Fum
     sorular\u0131n \u015Fifresini \xE7\xF6zebilirsen, i\u015Fimiz seninle tamamd\u0131r!
@@ -25,9 +25,10 @@ MonoBehaviour:
     Buradan sadece 1 ve 0 de\u011Ferlerini alabiliyorum..\u015E\xF6yle yapal\u0131m
     m\u0131? Sesli harfler 0, sessiz harfler 1 olsun. Yani \"armut\" yazmak istersen:
     01101 yazmal\u0131s\u0131n.... Umar\u0131m sesli ve sessiz harfleri biliyorsundur..
-    . a = 0, r = 1.. gibi.\n\u015Eimdi ilk soru geliyor: Adem'in cennetten kovulmas\u0131na
-    neden olan meyve nedir? \nSoruyu unutma..Soruyu sorduktan sonra yazd\u0131klar\u0131m\u0131
-    \u015Fifrelemek zorunday\u0131m.. Yani, g\xFCvenlik \xF6nlemi diyelim. Ka\xE7t\u0131m
+    . a = 0, r = 1.. gibi. \u0130\u015Fe e\u011Flence katmak i\xE7in geri say\u0131m
+    da ekledim. \nSoruyu unutma..Soruyu sorduktan sonra yazd\u0131klar\u0131m\u0131
+    \u015Fifrelemek zorunday\u0131m.. Yani, g\xFCvenlik \xF6nlemi diyelim.  Sorum
+    \u015Fu;\nAdem'in cennetten kovulmas\u0131na neden olan meyve hangisi?\n.......\nKa\xE7t\u0131m
     ben!"
   currentPassword: 0110
-  phaseTimer: 20
+  phaseTimer: 30

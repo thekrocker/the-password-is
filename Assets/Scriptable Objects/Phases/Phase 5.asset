@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5a5f48cc59247449ad93b475012061, type: 3}
+  m_Name: Phase 5
+  m_EditorClassIdentifier: 
+  dialogues:
+  - "Harikas\u0131n.. Umar\u0131m zaman\u0131n fark\u0131na var\u0131p beni b\u0131rak\u0131p
+    gitmemi\u015Fsindir. \u015Eimdi biraz s\u0131n\u0131rlar\u0131 zorlamak istiyorum..
+    \u015Eimdi soraca\u011F\u0131m soru tarz\u0131na \"Crack the Code\" deniliyor.
+    Y\u0131llard\u0131r kilitli olan bir bavulum var.. \u0130\xE7inde ne oldu\u011Funu
+    hat\u0131rlam\u0131yorum bile. Ama meraktan \xE7atl\u0131yorum. Kendime zorluk
+    olsun diye birtak\u0131m ipu\xE7lar\u0131 b\u0131rakm\u0131\u015F\u0131m.. Beraber
+    \xE7\xF6zelim mi? Yani, \xE7\xF6zmeme gibi bir \u015Fans\u0131n yok ama..\n\u015Eifremiz
+    \xFC\xE7 haneli ve elimizdeki bilgiler \u015Funlar....\n\n368 => Bu kombinasyonda
+    say\u0131n\u0131n kendisi do\u011Fru ve do\u011Fru yere yerle\u015Ftirilmi\u015F..\n387
+    => Bu kombinasyonda hi\xE7bir \u015Fey do\u011Fru de\u011Fil..\n276 => Bu kombinasyonda
+    bir say\u0131 do\u011Fru ama yanl\u0131\u015F yerle\u015Ftirilmi\u015F..\n471
+    => Bu kombinasyonda iki say\u0131 da do\u011Fru fakat ikisi de yanl\u0131\u015F
+    yerle\u015Ftirilmi\u015F..\n\nBu bilgiler ile bavulumun 3 haneli \u015Fifresini
+    bulabilir misin? Ne olur, rica ediyorum. \nNot alsan iyi edersin.. Ha, bundan
+    sonraki sorumuz ise son soru.\n.......................................................................................................................\n\n"
+  currentPassword: 164
+  phaseTimer: 150

@@ -13,7 +13,6 @@ namespace Managers
         
         private void OnEnable() => gameEvent.Add(this);
         private void OnDisable() => gameEvent.Remove(this);
-
         public void Invoke() => response?.Invoke();
     }
     

@@ -12,13 +12,16 @@ namespace Managers
         [Range(0.5f, 1.5f)] public float waitOffset;
 
         [Range(0.01f, 0.1f)] public float letterInterval = 0.05f;
-        [Title("Phase Data")] [SerializeField] private PhaseData[] phaseDatas;
 
         [SerializeField] private TextMeshProUGUI dialogueText;
 
 
         [SerializeField] private GameEventSO OnDialogStarted;
         [SerializeField] private GameEventSO OnDialogEnded;
+
+        [SerializeField] private GameEventSO GameWin;
+        
+        [SerializeField] private PhaseData lastLevel;
 
 
         private int _dialogueCount;
@@ -46,12 +49,12 @@ namespace Managers
             {
                 OnDialogStarted.Invoke();
                 yield return new WaitForSeconds(0.5f);
-                
+
                 while (true)
                 {
                     Timer.Timer.Instance.StopTimer = false;
-                    
-                    foreach (char letter in GetCurrentPhase().dialogues[_dialogueCount])
+
+                    foreach (char letter in GameManager.Instance.GetCurrentPhase().dialogues[_dialogueCount])
                     {
                         dialogueText.text += letter;
                         yield return new WaitForSeconds(letterInterval);
@@ -66,12 +69,22 @@ namespace Managers
                     }
                     else
                     {
+                        if (GameManager.Instance.GetCurrentPhase() == lastLevel)
+                        {
+                            _dialogueCount = 0;
+                            GameManager.Instance.IsGameOver = true;
+                            Debug.Log("This one was the last level...");
+                            gameObject.SetActive(false);
+                            GameWin.Invoke();
+                            yield break;
+                        }
+
                         _dialogueCount = 0;
                         var ifm = GetComponent<InputFieldManager>();
-                        yield return new WaitForSeconds(waitOffset);
+                        yield return new WaitForSeconds(1.5f);
                         OnDialogEnded.Invoke();
-                        
-                        if (!Timer.Timer.Instance.isActive) Timer.Timer.Instance.StartTimer(GetCurrentPhase().phaseTimer);
+                        if (!Timer.Timer.Instance.isActive)
+                            Timer.Timer.Instance.StartTimer(GameManager.Instance.GetCurrentPhase().phaseTimer);
                         yield break;
                     }
                 }
@@ -79,14 +92,6 @@ namespace Managers
         }
 
 
-        private int GetLastDialogText()
-        {
-            return GetCurrentPhase().dialogues.Length - 1;
-        }
-
-        private PhaseData GetCurrentPhase()
-        {
-            return phaseDatas[GameManager.Instance.CurrentPhaseIndex];
-        }
+        private int GetLastDialogText() => GameManager.Instance.GetCurrentPhase().dialogues.Length - 1;
     }
 }
