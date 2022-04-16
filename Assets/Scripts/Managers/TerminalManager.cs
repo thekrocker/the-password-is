@@ -6,6 +6,7 @@ using Sirenix.OdinInspector;
 using SO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class TerminalManager : MonoBehaviour
@@ -34,13 +35,13 @@ public class TerminalManager : MonoBehaviour
         if (IsPasswordTrue())
         {
             Debug.Log("True!");
-            PasswordSuccess.RaiseEvent();
+            PasswordSuccess.Invoke();
             ResetPasswordInput();
         }
         else // FAIL SCENEARIO.
         {
             Debug.Log("False password!");
-            PasswordFailed.RaiseEvent();
+            PasswordFailed.Invoke();
             ResetPasswordInput();
         }
     }

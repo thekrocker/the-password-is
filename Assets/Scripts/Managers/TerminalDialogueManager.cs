@@ -11,51 +11,44 @@ namespace Managers
     {
         [Range(0.5f, 1.5f)] public float waitOffset;
 
+        [Range(0.02f, 0.1f)] public float letterInterval = 0.05f;
         [Title("Phase Data")] [SerializeField] private PhaseData[] phaseDatas;
 
         [SerializeField] private TextMeshProUGUI dialogueText;
 
-        [SerializeField] private GameEventSO OnPasswordSuccess;
-        
 
-        [SerializeField] private GameEventSO OnDialogEnded;
         [SerializeField] private GameEventSO OnDialogStarted;
+        [SerializeField] private GameEventSO OnDialogEnded;
+
 
         private int _dialogueCount;
+        
+        
 
-
-        private void OnEnable()
+        private void Start()
         {
             SetCurrentDialogue();
-
-            OnPasswordSuccess.GameEvent += SetCurrentDialogue;
-        }
-
-        private void OnDisable()
-        {
-            OnPasswordSuccess.GameEvent -= SetCurrentDialogue;
         }
 
 
-        private void SetCurrentDialogue()
+        public void SetCurrentDialogue()
         {
-            StartCoroutine(CO_SetDialogueEffect());
-
-            OnDialogStarted.RaiseEvent();
             dialogueText.text = "";
+
+            StartCoroutine(CO_SetDialogueEffect());
 
 
             IEnumerator CO_SetDialogueEffect()
             {
-                yield return new WaitForSeconds(0.2f);
-                GameManager.Instance.HasDialogue = true;
+                OnDialogStarted.Invoke();
+                yield return new WaitForSeconds(0.5f);
 
                 while (true)
                 {
                     foreach (char letter in GetCurrentPhase().dialogues[_dialogueCount])
                     {
                         dialogueText.text += letter;
-                        yield return new WaitForSeconds(0.05f);
+                        yield return new WaitForSeconds(letterInterval);
 
                         if (char.IsPunctuation(letter) && !letter.Equals(',')) yield return new WaitForSeconds(0.3f);
                     }
@@ -69,18 +62,14 @@ namespace Managers
                     else
                     {
                         _dialogueCount = 0;
+                        var ifm = GetComponent<InputFieldManager>();
                         yield return new WaitForSeconds(waitOffset);
-                        Debug.Log("Dialog ended...");
-                        // Activate password entrance...
-                        OnDialogEnded.RaiseEvent();
-                        GameManager.Instance.HasDialogue = false;
-
+                        OnDialogEnded.Invoke();
                         yield break;
                     }
                 }
             }
         }
-
 
         private int GetLastDialogText()
         {

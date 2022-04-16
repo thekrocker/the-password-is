@@ -1,117 +1,86 @@
+using System;
 using System.Collections;
 using Sirenix.OdinInspector;
 using SO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace Managers
 {
     public class InputFieldManager : MonoBehaviour
     {
-        private TMP_InputField _inputField;
+        [SerializeField] private TMP_InputField _inputField;
         [SerializeField] private GameObject passwordInputArea;
-        
+
         [SerializeField] private TextMeshProUGUI terminalText;
-        [Range(0.05f,0.5f)]
-        [SerializeField] private float terminalTextInterval;
+        [Range(0.05f, 0.5f)] [SerializeField] private float terminalTextInterval;
         
-        [Title("Actions")] 
-        [SerializeField] private GameEventSO OnDialogStarted;
-        [SerializeField] private GameEventSO OnDialogEnded;
-
-        [SerializeField] private GameEventSO PasswordSuccess;
-        [SerializeField] private GameEventSO PasswordFailed;
-
         
-        private char[] _letters = "#$%&()*/0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSŞTUVWXYZ^_`abcdefghijklmnopqrstuvwxyz{}".ToCharArray();
 
-        private void GetReferences()
-        {
-            _inputField = GetComponent<TMP_InputField>();
-            
+        private char[] _letters = "#$%&()*/0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSŞTUVWXYZ^_`abcdefghijklmnopqrstuvwxyz{}"
+            .ToCharArray();
 
-        }
 
         private int _letterLength = 440;
 
+
+        private void Start() => passwordInputArea.SetActive(false);
+
         void OnEnable()
         {
-            GetReferences();
-            
-            SubscribeEvents();
-            
             ActivateInputField(); // @@todo: check later if needed
-
-            
         }
 
-        private void SetRandomTerminalText()
+
+        public bool hasDialogue;
+        
+        
+        public void SetRandomTerminalText()
         {
             StartCoroutine(CO_SetRandomText());
-            
+
             IEnumerator CO_SetRandomText()
             {
-                while (!GameManager.Instance.HasDialogue)
+                while (!hasDialogue)
                 {
                     terminalText.text = "";
-                    
-                    for (var i = 0; i < _letterLength; i++) terminalText.text += _letters[Random.Range(0, _letters.Length)];
+
+                    for (var i = 0; i < _letterLength; i++)
+                        terminalText.text += _letters[Random.Range(0, _letters.Length)];
                     yield return new WaitForSeconds(terminalTextInterval);
-                    
-                    if (GameManager.Instance.HasDialogue) yield break; //@toDO: Extra check here to cut the random terminal text...
+
+                    if (hasDialogue)
+                    {
+                        yield break;
+                    } 
                 }
-   
             }
         }
         
 
-
-        void SubscribeEvents()
+        public void ActivatePasswordInput()
         {
-            OnDialogStarted.GameEvent += DisablePasswordInput;
-            
-            OnDialogEnded.GameEvent += SetRandomTerminalText;
-            OnDialogEnded.GameEvent += ActivatePasswordInput;
-            
-            // Password Success
-            PasswordSuccess.GameEvent += ClearInputField;
-
-
-            //Password Failed
-            PasswordFailed.GameEvent += ClearInputField;
-            PasswordFailed.GameEvent += ActivateInputField;
+            hasDialogue = false;
+            ActivateInputField();
+            passwordInputArea.SetActive(true);
         }
 
-        private void ActivatePasswordInput() => passwordInputArea.SetActive(true);
-        private void DisablePasswordInput() => passwordInputArea.SetActive(false);
-
-        private void OnDisable()
+        public void DisablePasswordInput()
         {
-            if (GameManager.Instance == null) return;
-            
-            GameManager.Instance.HasDialogue = false;
-            
-            
-            OnDialogStarted.GameEvent -= DisablePasswordInput;
-            
-            OnDialogEnded.GameEvent -= SetRandomTerminalText;
-            OnDialogEnded.GameEvent -= ActivatePasswordInput;
-
-            // Password Success
-            PasswordSuccess.GameEvent -= ClearInputField;
-
-            //Password Failed
-            PasswordFailed.GameEvent -= ClearInputField;
-            PasswordFailed.GameEvent -= ActivateInputField;
+            hasDialogue = true;
+            passwordInputArea.SetActive(false);
         }
 
+        
 
-        private void ClearInputField()
+        public void ClearInputField()
         {
             _inputField.text = "";
         }
 
-        private void ActivateInputField()
+        public void ActivateInputField()
         {
             _inputField.ActivateInputField();
         }
