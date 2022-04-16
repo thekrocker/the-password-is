@@ -19,7 +19,7 @@ namespace Managers
         
         
 
-        private char[] _letters = "#$%&()*/0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSŞTUVWXYZ^_`abcdefghijklmnopqrstuvwxyz{}"
+        private readonly char[] _letters = "#$%&()*/0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSŞTUVWXYZ^_`abcdefghijklmnopqrstuvwxyz{}"
             .ToCharArray();
 
 
@@ -31,16 +31,16 @@ namespace Managers
         void OnEnable()
         {
             ActivateInputField(); // @@todo: check later if needed
+            if (!hasDialogue) SetRandomTerminalText();
         }
 
 
         public bool hasDialogue;
         
-        
         public void SetRandomTerminalText()
         {
             StartCoroutine(CO_SetRandomText());
-
+            
             IEnumerator CO_SetRandomText()
             {
                 while (!hasDialogue)
@@ -72,9 +72,7 @@ namespace Managers
             hasDialogue = true;
             passwordInputArea.SetActive(false);
         }
-
         
-
         public void ClearInputField()
         {
             _inputField.text = "";

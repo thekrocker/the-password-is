@@ -7,5 +7,7 @@ namespace SO
     {
         [TextArea(10,20)] public string[] dialogues;
         public string currentPassword;
+        
+        public float phaseTimer;
     }
 }

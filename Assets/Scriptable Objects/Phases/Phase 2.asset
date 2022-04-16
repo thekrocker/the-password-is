@@ -15,5 +15,10 @@ MonoBehaviour:
   dialogues:
   - "Tebrikler.. Kolayd\u0131 de\u011Fil mi? Cevap Elma, yani 0110. Oyunu devam ettirmene
     sevindim. Ka\xE7\u0131p gitseydin ger\xE7ekten \xE7ok \xFCz\xFClecektim. En az\u0131ndan
-    benimle e\u011Flenecek olman beni mutlu etti. Hmmm.. S\u0131radaki soru.. "
-  currentPassword: 002
+    benimle e\u011Flenecek olman beni mutlu etti. Neyse uzatmayay\u0131m. M\xFCzik
+    sever misin? Yani sa\xE7ma bi soru oldu. Masa\xFCst\xFCnde m\xFCzik uygulaman\u0131
+    g\xF6rebiliyorum. Hehe~. O zaman hadi git ve m\xFCzi\u011Fi dinle. \xD6nce beni
+    kapat tabi. Sorum \u015Fu: M\xFCzi\u011Fin isminin rakamlar\u0131 toplam\u0131
+    nedir? Eveeet... i\u015Fte gidiyorum. "
+  currentPassword: 10
+  phaseTimer: 30

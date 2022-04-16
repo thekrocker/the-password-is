@@ -8,17 +8,15 @@ namespace Managers
     public class GameManager : Singleton<GameManager>
     {
 
-        [SerializeField] private GameObject dialoguePanel;
-
-
         public int CurrentPhaseIndex;
 
         public void IncreasePhase() => CurrentPhaseIndex++;
 
-        public void OpenDialoguePanel()
+
+
+        public void GameOver()
         {
-            dialoguePanel.SetActive(true);
+            Debug.Log("Game is over..");
         }
-        
     }
 }

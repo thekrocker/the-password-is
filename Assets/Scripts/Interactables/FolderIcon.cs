@@ -5,9 +5,8 @@ namespace Interactables
 {
     public class FolderIcon : Interactable
     {
-
         [SerializeField] private GameObject targetFolder;
-        
+
         public override void OnPointerClick(PointerEventData eventData)
         {
             base.OnPointerClick(eventData);
@@ -18,5 +17,6 @@ namespace Interactables
         {
             targetFolder.SetActive(true);
         }
+        
     }
 }
