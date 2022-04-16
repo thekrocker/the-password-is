@@ -27,7 +27,6 @@ public class TerminalManager : MonoBehaviour
         CheckPassword();
     }
     
-    
     private void CheckPassword()
     {
         if (GameManager.Instance.CurrentPhaseIndex >= passwordDatas.Length) return;
