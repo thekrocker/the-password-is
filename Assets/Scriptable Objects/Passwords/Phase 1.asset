@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5a5f48cc59247449ad93b475012061, type: 3}
   m_Name: Phase 1
   m_EditorClassIdentifier: 
+  dialogues:
+  - 'Ehm, beni duyabiliyor musun? '
+  - 'Hey! '
   currentPassword: 001
