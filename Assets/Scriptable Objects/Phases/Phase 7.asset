@@ -14,10 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogues:
   - "........Sen harika biri olmal\u0131s\u0131n. Evet \u015Fifre oyunun isminde
-    gizliydi. Sen buraya daha gelmeden \xF6nce son \u015Fifreyi g\xF6rd\xFCn, oyunuma
-    girdin ve i\u015Fte buradas\u0131n.. The password is you...\n..............\n-file
-    delete all commit\n....REMOVING COMMITS...\n-file delete all files\n... REMOVING
-    ALL FILES...\n-file reload computer\n....RELOADING COMPUTER..........\n..GOOD-BYE
-    XOXO---"
+    gizliydi. Sen buraya gelmeden \xF6nce son b\xF6l\xFCm\xFCn \u015Fifresini g\xF6rd\xFCn,
+    oyunuma girdin ve i\u015Fte buradas\u0131n.. The password is you...\n..............\n-file
+    delete all commit\n....REMOVING COMMITS...\n-file delete all files..\n... REMOVING
+    ALL FILES...\n-file reload computer\n....RELOADING COMPUTER.......\n...GOOD....BYE...XOXO---"
   currentPassword: 100
-  phaseTimer: 180
+  phaseTimer: 140

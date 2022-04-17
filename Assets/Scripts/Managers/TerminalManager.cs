@@ -12,7 +12,7 @@ namespace Managers
     {
         [Range(0.5f, 1.5f)] public float waitOffset;
 
-        [Range(0.01f, 0.1f)] public float letterInterval = 0.05f;
+        public float letterInterval = 0.05f;
 
         [SerializeField] private TextMeshProUGUI dialogueText;
         
@@ -91,6 +91,18 @@ namespace Managers
                     }
                 }
             }
+        }
+
+        public void IncreaseSpeed()
+        {
+            if (letterInterval <= 0.03f) return;
+            letterInterval -= 0.01f;
+        }
+
+        public void DecreaseSpeed()
+        {
+            if (letterInterval >= 0.08f) return;
+            letterInterval += 0.01f;
         }
 
 

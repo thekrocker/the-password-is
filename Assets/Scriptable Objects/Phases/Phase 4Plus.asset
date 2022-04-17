@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de5a5f48cc59247449ad93b475012061, type: 3}
+  m_Name: Phase 4Plus
+  m_EditorClassIdentifier: 
+  dialogues:
+  - "Saatin fark\u0131na var\u0131p beni b\u0131rak\u0131p gitmedin de\u011Fil mi?
+    Tabii ki gitmedin. \xC7\xFCnk\xFC beni \xE7ok sevdin. O y\xFCzden buradas\u0131n.
+    Hesaplar\u0131n elimde falan diye de\u011Fil yani... Di mi?... O zaman h\u0131z
+    kesmeden devam edelim. Ho\u015Funa da gitti\u011Fime g\xF6re, sana numaram\u0131
+    versem fena olmaz.. O zaman numaram\u0131 bilgisayar\u0131ndaki rehberine b\u0131rak\u0131yorum.
+    Kontrol etsen iyi edersin. Ha bu arada.. bu b\xF6l\xFCm\xFCz\xFCn \u015Fifresi
+    de numaram.. S\xFCremiz ba\u015Fl\u0131yor......"
+  currentPassword: 951753963852741
+  phaseTimer: 100

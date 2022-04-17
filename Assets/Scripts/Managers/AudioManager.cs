@@ -13,16 +13,17 @@ namespace Managers
         private AudioSource _audioSource;
 
         private void Start() => _audioSource = GetComponent<AudioSource>();
-        
+
         public void PlayClickSound()
         {
-            
             if (_audioSource != null)
                 _audioSource.PlayOneShot(folderClickSound);
         }
 
+        public bool shouldPlay = true;
         public void PlayKeyboardClickSound()
         {
+            if (!shouldPlay) return;
             if (_audioSource != null)
                 _audioSource.PlayOneShot(keyboardClickSound);
         }
@@ -39,5 +40,7 @@ namespace Managers
             if (_audioSource != null)
                 _audioSource.PlayOneShot(passwordFailedSound);
         }
+
+        public void SetKeyboardClick() => shouldPlay = !shouldPlay;
     }
 }
