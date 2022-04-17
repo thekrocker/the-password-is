@@ -11,12 +11,12 @@ namespace Interactables
             Debug.Log("Clicked on me.. " + gameObject.name);
         }
 
-        public void OnPointerEnter(PointerEventData eventData)
+        public virtual void OnPointerEnter(PointerEventData eventData)
         {
             
         }
 
-        public void OnPointerExit(PointerEventData eventData)
+        public virtual void OnPointerExit(PointerEventData eventData)
         {
             
         }

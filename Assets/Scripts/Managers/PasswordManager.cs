@@ -37,6 +37,8 @@ public class PasswordManager : MonoBehaviour
             ResetPasswordInput();
             Timer.Timer.Instance.StopTimer = true;
             Timer.Timer.Instance.isActive = false;
+            
+            AudioManager.Instance.PlayPasswordSuccess();
         }
         else // FAIL SCENEARIO.
         {
@@ -45,6 +47,7 @@ public class PasswordManager : MonoBehaviour
                 PasswordFailed.Invoke();
                 GameManager.Instance.PasswordFailed = true;
                 ResetPasswordInput();
+                AudioManager.Instance.PlayPasswordFailed();
             }
             
             

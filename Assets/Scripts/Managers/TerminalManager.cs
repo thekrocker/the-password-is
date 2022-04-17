@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using MoreMountains.Feedbacks;
 using Sirenix.OdinInspector;
 using SO;
 using TMPro;
@@ -14,8 +15,8 @@ namespace Managers
         [Range(0.01f, 0.1f)] public float letterInterval = 0.05f;
 
         [SerializeField] private TextMeshProUGUI dialogueText;
-
-
+        
+        
         [SerializeField] private GameEventSO OnDialogStarted;
         [SerializeField] private GameEventSO OnDialogEnded;
 
@@ -56,6 +57,7 @@ namespace Managers
 
                     foreach (char letter in GameManager.Instance.GetCurrentPhase().dialogues[_dialogueCount])
                     {
+                        AudioManager.Instance.PlayKeyboardClickSound();
                         dialogueText.text += letter;
                         yield return new WaitForSeconds(letterInterval);
 
